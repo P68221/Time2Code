@@ -1,4 +1,7 @@
+def magnification(actual_size, image_size):
+  return (image_size * 10000) / actual_size
+  
 actual_size = int(input("Enter the actual size in micrometers: "))
 image_size = int(input("Enter the image size in centimeters: "))
-mag = (image_size * 10000) / actual_size
+mag = magnification(actual_size, image_size)
 print("The magnification is", mag ,"X")
