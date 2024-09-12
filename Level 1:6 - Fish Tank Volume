@@ -1,0 +1,6 @@
+length = int(input("Enter the length of the tank in cm: "))
+width = int(input("Enter the height of the tank in cm: "))
+height = int(input("Enter the depth of the tank in cm: "))
+litres = (length * width * height) / 1000
+gallons = litres / 4.546
+print("A", length, "x", width, "x", height, "cm tank is", litres, "litres and", gallons, "imperial gallons.")
