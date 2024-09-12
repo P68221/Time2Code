@@ -1,0 +1,4 @@
+actual_size = int(input("Enter the actual size in micrometers: "))
+image_size = int(input("Enter the image size in centimeters: "))
+mag = (image_size * 10000) / actual_size
+print("The magnification is", mag ,"X")
