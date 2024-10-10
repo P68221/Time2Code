@@ -1,0 +1,24 @@
+# Cashpoint program
+
+# -------------------------
+# Subprograms
+# -------------------------
+def dispense(amount):
+    print("W" + amount)
+    iamount = int(amount)
+    while iamount >= 20:
+      iamount = iamount-20
+      print ("D20")
+    while iamount >= 10:
+      print ("D10")
+      iamount = iamount-10
+    while iamount >= 5:
+      print ("D5")
+      iamount = iamount-5
+
+
+# -------------------------
+# Main program
+# -------------------------
+amount = input("Enter the amount to withdraw: ")
+dispense(amount)
