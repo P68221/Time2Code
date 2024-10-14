@@ -1,0 +1,31 @@
+# Guess the number program
+
+# -------------------------
+# Import libraries
+# -------------------------
+import random
+
+# -------------------------
+# Subprograms
+# -------------------------
+def play_guess_the_number(min, max):
+  random.seed()
+  number = random.randint(min,max)
+  guess = 0
+  count = 0
+  while guess != number:
+      guess = int(input("Enter the number I'm thinking of:"))
+      count = count + 1
+      if guess < number:
+          print("Your guess is too low.")
+      elif guess > number:
+          print("Your guess is too high.")
+  print("You've got it, I chose.", number, "It took you", count,"guesses.")
+  
+# -------------------------
+# Main program
+# -------------------------
+min = int(input("What is the lowest number I can choose? :"))
+max = int(input("What is the highest number I can choose? :"))
+print("OK, let's play. How many guesses will you take?")
+play_guess_the_number(min, max)
