@@ -1,11 +1,10 @@
 # Darts program
-
 # -------------------------
 # Subprograms
 # -------------------------
 def is_dart_valid(dart):
   valid = False
-  if dart > 1 and dart < 21:
+  if dart >= 1 and dart < 21:
     valid = True
   elif dart == 25 or dart == 50:
     valid = True 
@@ -17,11 +16,38 @@ def is_dart_valid(dart):
     valid = True
     print("Treble", int(dart / 3))  
   return valid
-
+  
 def play_game():
-
-
-
+  player = 0
+  winner = -1
+  while winner == -1:
+    print("Player", player + 1, "it's your turn. Your score is:", score[player])
+    darts_thrown = 0
+    total = 0
+    valid_dart = False
+    while valid_dart == False or darts_thrown < 3 and winner == -1:
+      print("Darts", darts_thrown + 1)
+      dart = int(input("Enter score: "))
+      valid_dart = is_dart_valid(dart)
+      if valid_dart:
+        darts_thrown = darts_thrown + 1
+        total = total + dart
+        if score[player] - total == 0 and dart % 2 == 0:
+          winner = player + 1
+        elif score[player] - total < 0 or score[player] - total == 1:
+          print("Bust!")
+          darts_thrown = 3
+          total = 0
+      else:
+        print("Invalid dart.")
+    print(total, "scored.")
+    score[player] = score[player] - total
+    print()
+    player = (player + 1) % 2
+  print("Player", winner, "wins the leg.")
+  
 # -------------------------
 # Main program
 # -------------------------
+score = [501, 501]
+play_game()
