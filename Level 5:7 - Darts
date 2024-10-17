@@ -1,0 +1,27 @@
+# Darts program
+
+# -------------------------
+# Subprograms
+# -------------------------
+def is_dart_valid(dart):
+  valid = False
+  if dart > 1 and dart < 21:
+    valid = True
+  elif dart == 25 or dart == 50:
+    valid = True 
+    print("Shot!")
+  elif dart % 2 == 0 and dart <= 40:
+    valid = True
+    print("Double", int(dart / 2))
+  elif dart % 3 == 0 and dart <= 60:
+    valid = True
+    print("Treble", int(dart / 3))  
+  return valid
+
+def play_game():
+
+
+
+# -------------------------
+# Main program
+# -------------------------
