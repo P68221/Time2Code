@@ -1,0 +1,41 @@
+# Rainfall program
+
+# -------------------------
+# Subprograms
+# -------------------------
+def analyse1(data):
+    count = 0
+    average = 0
+    highest = 0
+    for value in data:
+        if value == 0:
+            count = count + 1
+        average = average + value
+        if value > highest:
+          highest = value
+    average = average / len()
+    return count
+
+
+def analyse2(data):
+    count = 0
+    average = 0
+    highest = 0
+    for value in data:
+        if value == 0:
+            count = count + 1
+        average = average + value
+        if value > highest:
+          highest = value
+    average = average / len()
+    return count
+
+# -------------------------
+# Main program
+# -------------------------
+daily_rainfall_mm = [0.1, 0.0, 0.2, 0.4, 0.1, 0.0, 0.0,
+                     0.0, 0.3, 0.3, 0.2, 0.0, 0.0, 0.1]
+analysis = analyse1(daily_rainfall_mm)
+print("Days with no rain:", analysis[0])
+print("Average rainfall: {0:2f}".format(analysis[1]))
+print("Highest rainfall:", analysis[2])
