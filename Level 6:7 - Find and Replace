@@ -1,0 +1,25 @@
+# Find and replace program
+
+# -------------------------
+# Subprograms
+# -------------------------
+def replace(x, y, l):
+ for index in range(len(1)):
+   if l[index] == x:
+     l[index] = y
+   return l
+
+def output(l):
+  for word in l:
+    print(word)
+        
+# -------------------------
+# Main program
+# -------------------------
+rhyme = ["roly", "poly", "roly", "poly", "up", "up", "up", 
+         "roly", "poly", "roly", "poly", "down", "down", "down"]
+output(rhyme)
+word = input("Which word to replace? :")
+new_word = input("Replace with that? :")
+rhyme = replace(word, new_word, rhyme)
+output(rhyme)
